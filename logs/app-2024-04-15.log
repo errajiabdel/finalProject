@@ -1,0 +1,100 @@
+22:54:18.665 INFO  utilities.Util Date with format :: MM/dd/yyyy HH:mm:ss :: 04/15/2024 22:54:18
+22:54:18.673 INFO  utilities.Util Current Date :: 04_15_2024_22_54_18
+22:54:22.553 INFO  base.TestListeners ************************************************************
+22:54:22.553 INFO  base.TestListeners Test Method :: singInWithValidData Started
+22:54:22.554 INFO  base.TestListeners ************************************************************
+22:54:22.578 INFO  base.CustomDriver Element :: Email Field :: found with locator :: id=>user-name
+22:54:22.853 INFO  base.CustomDriver Sent data :: standard_user on :: Email Field with locator :: id=>user-name
+22:54:22.869 INFO  base.CustomDriver Element :: Password Field :: found with locator :: id=>password
+22:54:22.966 INFO  base.CustomDriver Sent data :: secret_sauce on :: Password Field with locator :: id=>password
+22:54:22.983 INFO  base.CustomDriver Element :: Login Button :: found with locator :: id=>login-button
+22:54:23.098 INFO  base.CustomDriver Clicked on :: Login Button :: with locator :: id=>login-button
+22:54:23.114 INFO  base.CustomDriver Element list found with locator :: id=>shopping_cart_container
+22:54:23.115 INFO  base.CustomDriver Element :: cart icon as indication of user successfully logged in :: present with locator :: id=>shopping_cart_container
+22:54:23.118 INFO  base.TestListeners ************************************************************
+22:54:23.118 INFO  base.TestListeners Test Method :: singInWithValidData Completed Successfully
+22:54:23.118 INFO  base.TestListeners ************************************************************
+22:54:23.127 INFO  base.TestListeners ************************************************************
+22:54:23.127 INFO  base.TestListeners Test Method :: addToCartFromHome Started
+22:54:23.127 INFO  base.TestListeners ************************************************************
+22:54:23.131 INFO  base.CustomDriver Waiting for max :: 8 :: for element to be clickable
+22:54:23.233 INFO  base.CustomDriver Clicked on :: item added from home page :: with locator :: xpath=>//div[@class='inventory_list']/descendant::button[1]
+22:54:23.237 INFO  base.TestListeners ************************************************************
+22:54:23.237 INFO  base.TestListeners Test Method :: addToCartFromHome Completed Successfully
+22:54:23.237 INFO  base.TestListeners ************************************************************
+22:54:23.238 INFO  base.TestListeners ************************************************************
+22:54:23.239 INFO  base.TestListeners Test Method :: addToCartFromProductD Started
+22:54:23.239 INFO  base.TestListeners ************************************************************
+22:54:23.243 INFO  base.CustomDriver Waiting for max :: 8 :: for element to be clickable
+22:54:23.323 INFO  base.CustomDriver Clicked on :: item clicked for the next step :: with locator :: xpath=>//div[@class='inventory_list']/descendant::button[2]
+22:54:23.327 INFO  base.CustomDriver Waiting for max :: 15 :: for element to be clickable
+22:54:23.396 INFO  base.CustomDriver Clicked on :: item added to cart from product detail :: with locator :: xpath=>//button[text()='Add to cart']
+22:54:23.399 INFO  base.TestListeners ************************************************************
+22:54:23.399 INFO  base.TestListeners Test Method :: addToCartFromProductD Completed Successfully
+22:54:23.399 INFO  base.TestListeners ************************************************************
+22:54:23.400 INFO  base.TestListeners ************************************************************
+22:54:23.400 INFO  base.TestListeners Test Method :: multipleItemToAdd Started
+22:54:23.400 INFO  base.TestListeners ************************************************************
+22:54:23.404 INFO  base.CustomDriver Waiting for max :: 11 :: for element to be clickable
+22:54:23.469 INFO  base.CustomDriver Clicked on :: adding product 1 for checkout :: with locator :: xpath=>//div[@class='inventory_list']/descendant::button[3]
+22:54:23.474 INFO  base.CustomDriver Waiting for max :: 9 :: for element to be clickable
+22:54:23.544 INFO  base.CustomDriver Clicked on :: adding product 2 for checkout :: with locator :: xpath=>//div[@class='inventory_list']/descendant::button[4]
+22:54:23.549 INFO  base.CustomDriver Waiting for max :: 8 :: for element to be clickable
+22:54:23.632 INFO  base.CustomDriver Clicked on :: clicked on cart icon for checkout items :: with locator :: id=>shopping_cart_container
+22:54:23.637 INFO  base.CustomDriver Waiting for max :: 8 :: for element to be clickable
+22:54:23.716 INFO  base.CustomDriver Clicked on :: click on checkout button for checkout items  :: with locator :: id=>checkout
+22:54:23.719 INFO  base.TestListeners ************************************************************
+22:54:23.719 INFO  base.TestListeners Test Method :: multipleItemToAdd Completed Successfully
+22:54:23.719 INFO  base.TestListeners ************************************************************
+22:54:23.720 INFO  base.TestListeners ************************************************************
+22:54:23.721 INFO  base.TestListeners Test Method :: removeItemFromCartPAge Started
+22:54:23.721 INFO  base.TestListeners ************************************************************
+22:54:23.724 INFO  base.CustomDriver Waiting for max :: 8 :: for element to be clickable
+22:54:23.794 INFO  base.CustomDriver Clicked on :: cart icon clicked to remove item :: with locator :: id=>shopping_cart_container
+22:54:23.799 INFO  base.CustomDriver Waiting for max :: 10 :: for element to be clickable
+22:54:23.879 INFO  base.CustomDriver Clicked on :: remove product from cart page   :: with locator :: xpath=>//div[@class='cart_list']/descendant::button[1]
+22:54:23.902 INFO  base.TestListeners ************************************************************
+22:54:23.921 INFO  base.TestListeners Test Method :: removeItemFromCartPAge Completed Successfully
+22:54:23.921 INFO  base.TestListeners ************************************************************
+22:54:23.924 INFO  base.TestListeners ************************************************************
+22:54:23.943 INFO  base.TestListeners Test Method :: removeItemFromHomePage Started
+22:54:23.943 INFO  base.TestListeners ************************************************************
+22:54:23.947 INFO  base.CustomDriver Waiting for max :: 10 :: for element to be clickable
+22:54:24.035 INFO  base.CustomDriver Clicked on :: cart icon clicked :: with locator :: id=>shopping_cart_container
+22:54:24.055 INFO  base.CustomDriver Waiting for max :: 8 :: for element to be clickable
+22:54:24.158 INFO  base.CustomDriver Clicked on :: returned to shopping page from cart :: with locator :: id=>continue-shopping
+22:54:24.181 INFO  base.CustomDriver Waiting for max :: 12 :: for element to be clickable
+22:54:24.266 INFO  base.CustomDriver Clicked on :: remove item from home page   :: with locator :: xpath=>//div[@class='inventory_list']/descendant::button[2]
+22:54:24.269 INFO  base.TestListeners ************************************************************
+22:54:24.269 INFO  base.TestListeners Test Method :: removeItemFromHomePage Completed Successfully
+22:54:24.269 INFO  base.TestListeners ************************************************************
+22:54:24.270 INFO  base.TestListeners ************************************************************
+22:54:24.270 INFO  base.TestListeners Test Method :: returnToShoppingFromCArt Started
+22:54:24.270 INFO  base.TestListeners ************************************************************
+22:54:24.273 INFO  base.CustomDriver Waiting for max :: 10 :: for element to be clickable
+22:54:24.343 INFO  base.CustomDriver Clicked on :: cart icon clicked :: with locator :: id=>shopping_cart_container
+22:54:24.348 INFO  base.CustomDriver Waiting for max :: 8 :: for element to be clickable
+22:54:24.428 INFO  base.CustomDriver Clicked on :: returned to shopping page from cart :: with locator :: id=>continue-shopping
+22:54:24.432 INFO  base.TestListeners ************************************************************
+22:54:24.432 INFO  base.TestListeners Test Method :: returnToShoppingFromCArt Completed Successfully
+22:54:24.432 INFO  base.TestListeners ************************************************************
+22:54:24.435 INFO  base.TestListeners ************************************************************
+22:54:24.435 INFO  base.TestListeners Test Method :: singInWithInvalidData Started
+22:54:24.435 INFO  base.TestListeners ************************************************************
+22:54:24.518 INFO  base.CustomDriver Element :: Email Field :: found with locator :: id=>user-name
+22:54:24.648 INFO  base.CustomDriver Sent data :: test1233@email on :: Email Field with locator :: id=>user-name
+22:54:24.659 INFO  base.CustomDriver Element :: Password Field :: found with locator :: id=>password
+22:54:24.750 INFO  base.CustomDriver Sent data :: Test12222 on :: Password Field with locator :: id=>password
+22:54:24.763 INFO  base.CustomDriver Element :: Login Button :: found with locator :: id=>login-button
+22:54:24.836 INFO  base.CustomDriver Clicked on :: Login Button :: with locator :: id=>login-button
+22:54:24.851 INFO  base.CustomDriver Element list found with locator :: xpath=>//h3[text()]
+22:54:24.851 INFO  base.CustomDriver Element :: Invalid Credentials Error Message :: present with locator :: xpath=>//h3[text()]
+22:54:24.851 INFO  base.CustomDriver Getting text of :: Invalid Credentials Error Message :: with locator :: xpath=>//h3[text()]
+22:54:24.864 INFO  base.CustomDriver Element :: Invalid Credentials Error Message :: found with locator :: xpath=>//h3[text()]
+22:54:24.882 INFO  base.CustomDriver Text of :: Invalid Credentials Error Message :: with locator :: xpath=>//h3[text()] is :: Epic sadface: Username and password do not match any user in this service
+22:54:24.882 INFO  utilities.Util Actual Text from Web Application UI :: Epic sadface: Username and password do not match any user in this service
+22:54:24.882 INFO  utilities.Util Expected Text from Web Application UI :: Epic sadface: Username and password do not match any user in this service
+22:54:24.882 INFO  utilities.Util ### Verification Contains !!!
+22:54:24.883 INFO  base.TestListeners ************************************************************
+22:54:24.883 INFO  base.TestListeners Test Method :: singInWithInvalidData Completed Successfully
+22:54:24.883 INFO  base.TestListeners ************************************************************
