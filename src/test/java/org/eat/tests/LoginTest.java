@@ -23,41 +23,16 @@ public class testProject extends baseTestProject {
 
     }
 
-    @Test(groups = {"regression"})
-    public void addToCartFromProductD() {
-        shop.addToCartFromProductDetail();
+
+    @Test(dataProvider = "loginData",groups = {"smoke"})
+    public void singInWithValidData (String username,String password) {
+        //navP.toLoginPage();
+        logP.SignInWith(username,password);
+        boolean result=navP.isUserLoggedIn();
+        Assert.assertTrue(result);
 
     }
 
-    @Test(groups = {"smoke"})
-    public void addToCartFromHome() {
-        shop.addToCartFromHomeP();
-
-    }
-
-
-    @Test(groups = {"regression"})
-    public void returnToShoppingFromCArt() {
-        shop.returnToShoppingFromCart();
-
-    }
-
-    @Test(groups = {"smoke"})
-    public void removeItemFromCartPAge() {
-        shop.removeItemFromCartPage();
-    }
-
-    @Test(groups = {"smoke"})
-    public void removeItemFromHomePage() {
-        shop.returnToShoppingFromCart();
-        shop.removeItemFromHomePage();
-    }
-
-    @Test(groups = {"regression"})
-    public void multipleItemToAdd() {
-
-        shop.addingMultipleItems();
-    }
 
 
 
