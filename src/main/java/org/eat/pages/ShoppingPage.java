@@ -1,18 +1,17 @@
 package org.eat.pages;
 
 import org.eat.base.CustomDriver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class shoppingPage extends CustomDriver {
+public class ShoppingPage extends CustomDriver {
 
-    public shoppingPage(WebDriver driver) {
+    public ShoppingPage(WebDriver driver) {
         super(driver);
         this.driver=driver;
     }
 
     private String ADD_TO_CART_FromHomePage = "xpath=>//div[@class='inventory_list']/descendant::button[1]";
-    
+
     private String ADD_TO_CART_FROM_PRODUCT_DETAIL = "xpath=>//button[text()='Add to cart']";
     private String CLICK_ON_PRODUCT = "xpath=>//div[@class='inventory_list']/descendant::button[2]";
     private String CART_ICON = "id=>shopping_cart_container";
@@ -23,6 +22,8 @@ public class shoppingPage extends CustomDriver {
     private String ADD_PRODUCT_1 = "xpath=>//div[@class='inventory_list']/descendant::button[3]";
     private String ADD_PRODUCT_2 = "xpath=>//div[@class='inventory_list']/descendant::button[4]";
     private String CHECKOUT = "id=>checkout";
+    private String REMOVE_BUTTON="xpath=>//button[text()='Remove']";
+    private String TITLE="xpath=>//span[@class='title']";
 
 
 
@@ -30,6 +31,11 @@ public class shoppingPage extends CustomDriver {
     public void addToCartFromHomeP() {
         clickWhenReady(ADD_TO_CART_FromHomePage,"item added from home page",8);
 
+
+    }
+    public boolean isItemAdded() {
+        boolean result = isElementPresent(REMOVE_BUTTON, "remove button present as indication of item added ");
+        return result;
     }
 
     public void addToCartFromProductDetail() {
@@ -42,6 +48,11 @@ public class shoppingPage extends CustomDriver {
        clickWhenReady(CART_ICON,"cart icon clicked",10);
        clickWhenReady(RETURN_TO_SHOPPING,"returned to shopping page from cart",8);
     }
+    public boolean isUserReturnedToHomePage() {
+        boolean result = isElementPresent(TITLE, "title present as indication of user returned to home page ");
+        return result;
+    }
+
     public void removeItemFromCartPage(){
        
         clickWhenReady(CART_ICON,"cart icon clicked to remove item",8);
@@ -56,8 +67,20 @@ public class shoppingPage extends CustomDriver {
 
         clickWhenReady(ADD_PRODUCT_1,"adding product 1 for checkout",11);
         clickWhenReady(ADD_PRODUCT_2,"adding product 2 for checkout",9);
+
+
+    }
+
+    public void checkout(){
         clickWhenReady(CART_ICON,"clicked on cart icon for checkout items",8);
         clickWhenReady(CHECKOUT,"click on checkout button for checkout items ",8);
+
+    }
+
+    public boolean isMultipleItemAdded() {
+        boolean result = isElementPresent(ADD_PRODUCT_1, "product 1  present as indication of of multiple item added ");
+        boolean result1 = isElementPresent(ADD_PRODUCT_2, "product 2  present as indication of of multiple item added ");
+        return result&result1;
     }
 
 

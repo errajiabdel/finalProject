@@ -25,6 +25,8 @@ public class NavigationPage extends CustomDriver {
         driver.get(Constants.TEST_URL);
     }
 
+
+
     public void toLogout() {
         clickElement(MENU,"click on menu to choose logout option");
         clickElement(LOGOUT_FROM_MENU,"logged out");

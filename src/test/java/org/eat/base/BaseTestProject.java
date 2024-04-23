@@ -2,45 +2,35 @@ package org.eat.base;
 
 import org.eat.pages.LoginPage;
 import org.eat.pages.NavigationPage;
-import org.eat.pages.shoppingPage;
+import org.eat.pages.ShoppingPage;
 import org.eat.utilities.Constants;
 import org.eat.utilities.ExcelUtility;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.annotations.DataProvider;
 
-public class baseTestProject {
+public class BaseTestProject {
 
     public WebDriver driver;
     public LoginPage logP ;
     public NavigationPage navP;
-    public shoppingPage shop;
+    public ShoppingPage shop;
 
-
-
-    @BeforeClass(groups = {"smoke","regression"})
+    @BeforeClass(groups = {"regression","smoke"})
     public void setUp () throws Exception {
         driver= WebDriverFactory.getInstance().getDriver("chrome");
         driver.get(Constants.TEST_URL);
-        // ExcelUtility.setExcelFile(constants.excelFilePath,"jenkins");
         ExcelUtility.setExcelFile(Constants.EXCEL_FILEPATH2,"projectData");
+
         logP=new LoginPage(driver);
         navP=new NavigationPage(driver);
-        shop=new shoppingPage(driver);
-
-
-
-    }
-    @Test(dataProvider = "loginData",groups = {"smoke"})
-    public void singInWithValidData (String username,String password) {
-        //navP.toLoginPage();
-        logP.SignInWith(username,password);
-        boolean result=navP.isUserLoggedIn();
-        Assert.assertTrue(result);
+        shop=new ShoppingPage(driver);
+        logP.SignInWith("standard_user","secret_sauce");
 
     }
+
+
     @DataProvider(name="loginData")
     public Object[][] loginTestData(){
         Object[][] testData= ExcelUtility.getTestData("validData");
@@ -54,11 +44,6 @@ public class baseTestProject {
         Object[][] testData= ExcelUtility.getTestData("invalidData");
         return testData;
     }
-
-
-
-
-
 
 
 }

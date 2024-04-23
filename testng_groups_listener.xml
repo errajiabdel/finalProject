@@ -18,8 +18,12 @@
             </run>
         </groups>
         <classes>
-            <class name="org.eat.tests.testProject">
+            <class name="org.eat.tests.LoginTest">
             </class>
+            <class name="org.eat.tests.ShoppingTest">
+
+            </class>
+
         </classes>
     </test>
 
