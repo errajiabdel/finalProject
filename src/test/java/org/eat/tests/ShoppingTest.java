@@ -12,6 +12,16 @@ public class ShoppingTest extends BaseTestProject  {
 
 
 
+
+    @Test(dataProvider = "loginData",groups = {"smoke"})
+    public void AddToCartFromHome(String username,String password)  {
+        logP.SignInWith(username,password);
+        shop.addToCartFromHomeP();
+        boolean result=shop.isItemAdded();
+        Assert.assertTrue(result);
+
+
+    }
     @Test(groups = {"regression"})
     public void AddToCartFromProductD()  {
 
@@ -19,14 +29,6 @@ public class ShoppingTest extends BaseTestProject  {
         boolean result=shop.isItemAdded();
         Assert.assertTrue(result);
 
-
-    }
-
-    @Test(groups = {"smoke"})
-    public void AddToCartFromHome()  {
-        shop.addToCartFromHomeP();
-        boolean result=shop.isItemAdded();
-        Assert.assertTrue(result);
 
 
     }
