@@ -3,6 +3,7 @@ package org.eat.base;
 import org.eat.pages.LoginPage;
 import org.eat.pages.NavigationPage;
 import org.eat.pages.ShoppingPage;
+import org.eat.tests.LoginTest;
 import org.eat.utilities.Constants;
 import org.eat.utilities.ExcelUtility;
 import org.openqa.selenium.WebDriver;
@@ -23,10 +24,10 @@ public class BaseTestProject {
         driver.get(Constants.TEST_URL);
         ExcelUtility.setExcelFile(Constants.EXCEL_FILEPATH2,"projectData");
 
+
         logP=new LoginPage(driver);
         navP=new NavigationPage(driver);
         shop=new ShoppingPage(driver);
-        logP.SignInWith("standard_user","secret_sauce");
 
     }
 
