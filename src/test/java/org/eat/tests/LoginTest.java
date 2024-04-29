@@ -12,8 +12,7 @@ public class LoginTest extends BaseTestProject {
 
     @Test( dataProvider = "loginDataInvalid",groups = {"smoke"})
     public void singInWithInvalidData(String username, String password) {
-        navP.toLogout();
-       // navP.toLoginPage();
+
 
         logP.SignInWith(username, password);
         boolean result = logP.verifyInvalidCredentialsErrorMessage();
@@ -23,8 +22,7 @@ public class LoginTest extends BaseTestProject {
     }
     @Test(dataProvider = "loginData",groups = {"smoke"})
     public void singInWithValidData (String username,String password) {
-        //navP.toLogout();
-       // navP.toLoginPage();
+
         logP.SignInWith(username,password);
         boolean result=navP.isUserLoggedIn();
         Assert.assertTrue(result);
