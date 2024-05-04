@@ -9,13 +9,8 @@ import org.testng.annotations.*;
 public class ShoppingTest extends BaseTestProject  {
 
 
-
-
-
-
-    @Test(dataProvider = "loginData",groups = {"smoke"})
-    public void AddToCartFromHome(String username,String password)  {
-        logP.SignInWith(username,password);
+    @Test(groups = {"smoke"})
+    public void addToCartFromHome()  {
         shop.addToCartFromHomeP();
         boolean result=shop.isItemAdded();
         Assert.assertTrue(result);
@@ -23,7 +18,7 @@ public class ShoppingTest extends BaseTestProject  {
 
     }
     @Test(groups = {"regression"})
-    public void AddToCartFromProductD()  {
+    public void addToCartFromProductD()  {
 
         shop.addToCartFromProductDetail();
         boolean result=shop.isItemAdded();
@@ -35,7 +30,7 @@ public class ShoppingTest extends BaseTestProject  {
 
 
     @Test(groups = {"regression"})
-    public void ReturnToShoppingFromCArt() {
+    public void returnToShoppingFromCArt() {
         shop.returnToShoppingFromCart();
         boolean result=shop.isUserReturnedToHomePage();
         Assert.assertTrue(result);
@@ -43,15 +38,24 @@ public class ShoppingTest extends BaseTestProject  {
     }
 
     @Test(groups = {"smoke"})
-    public void RemoveItemFromCartPAge()  {
+    public void removeItemFromCartPAge()  {
+
         shop.removeItemFromCartPage();
+        boolean result =shop.isItemRemovedFromCart();
+        Assert.assertFalse(result);
+
+
 
     }
 
+
     @Test(groups = {"smoke"})
-    public void RemoveItemFromHomePage()  {
+    public void removeItemFromHomePage()  {
         shop.returnToShoppingFromCart();
         shop.removeItemFromHomePage();
+        boolean result =shop.isItemRemovedFromHomePage();
+        Assert.assertTrue(result);
+
 
     }
 
@@ -62,6 +66,8 @@ public class ShoppingTest extends BaseTestProject  {
         boolean result=shop.isMultipleItemAdded();
         Assert.assertTrue(result);
         shop.checkout();
+        boolean result1 = shop.isUserCheckedOut();
+        Assert.assertTrue(result1);
 
     }
 
