@@ -24,6 +24,8 @@ public class ShoppingPage extends CustomDriver {
     private String CHECKOUT = "id=>checkout";
     private String REMOVE_BUTTON="xpath=>//button[text()='Remove']";
     private String TITLE="xpath=>//span[@class='title']";
+    private String CHECKOUT_TITLE="xpath=>//span[text()='Checkout: Your Information']";
+    private String SPECIFIC_ITEM="id=>item_4_title_link";
 
 
 
@@ -82,6 +84,25 @@ public class ShoppingPage extends CustomDriver {
         boolean result1 = isElementPresent(ADD_PRODUCT_2, "product 2  present as indication of of multiple item added ");
         return result&result1;
     }
+    public boolean isUserCheckedOut() {
+        boolean result = isElementPresent(CHECKOUT_TITLE ,"checkout title present as indication of user checked out  ");
+
+        return result;
+    }
+    public boolean isItemRemovedFromHomePage() {
+        boolean result = isElementPresent(ADD_TO_CART_FromHomePage,"add to cart button present as indication of item has been removed   ");
+
+        return result;
+    }
+    public boolean isItemRemovedFromCart() {
+        boolean result = isElementPresent(SPECIFIC_ITEM,"specific item  should not be present after removing it  ");
+
+        return result;
+    }
+
+
+
+
 
 
 
