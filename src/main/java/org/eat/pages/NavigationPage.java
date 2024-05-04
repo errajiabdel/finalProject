@@ -18,11 +18,17 @@ public class NavigationPage extends CustomDriver {
     private String CART_ICON = "id=>shopping_cart_container";
     private String MENU = "id=>react-burger-menu-btn";
     private String LOGOUT_FROM_MENU = "id=>logout_sidebar_link";
+    private String EMAIL_FIELD = "id=>user-name";
+    private String PASSWORD_FIELD = "id=>password";
+    private String LOGIN_BUTTON = "id=>login-button";
 
 
 
-    public void toLoginPage() {
-        driver.get(Constants.TEST_URL);
+    public void toLogin() {
+       sendData(EMAIL_FIELD,"standard_user","email field");
+       sendData(PASSWORD_FIELD,"secret_sauce","password field ");
+       clickElement(LOGIN_BUTTON,"login button");
+
     }
 
 
@@ -38,6 +44,9 @@ public class NavigationPage extends CustomDriver {
         boolean result = isElementPresent(CART_ICON, "cart icon as indication of user successfully logged in");
         return result;
     }
+
+
+
 
 
 }
