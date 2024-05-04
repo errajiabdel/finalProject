@@ -18,18 +18,21 @@ public class BaseTestProject {
     public NavigationPage navP;
     public ShoppingPage shop;
 
+
+
     @BeforeClass(groups = {"regression","smoke"})
     public void setUp () throws Exception {
         driver= WebDriverFactory.getInstance().getDriver("chrome");
         driver.get(Constants.TEST_URL);
         ExcelUtility.setExcelFile(Constants.EXCEL_FILEPATH2,"projectData");
 
-
         logP=new LoginPage(driver);
         navP=new NavigationPage(driver);
         shop=new ShoppingPage(driver);
+        navP.toLogin();
 
     }
+
 
 
     @DataProvider(name="loginData")
