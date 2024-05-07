@@ -14,22 +14,16 @@ public class LoginPage extends CustomDriver {
     }
 
     public WebDriver driver;
-
-
     private String EMAIL_FIELD = "id=>user-name";
     private String PASSWORD_FIELD = "id=>password";
     private String LOGIN_BUTTON = "id=>login-button";
     private String INVALID_CREDENTIALS_ERROR_MESSAGE = "xpath=>//h3[text()]";
-
-
 
     public void SignInWith(String username, String password) {
         sendData(EMAIL_FIELD, username, "Email Field");
         sendData(PASSWORD_FIELD, password, "Password Field");
         clickElement(LOGIN_BUTTON, "Login Button");
     }
-
-
 
     public boolean verifyInvalidCredentialsErrorMessage() {
         boolean elementPresent = isElementPresent(INVALID_CREDENTIALS_ERROR_MESSAGE,
