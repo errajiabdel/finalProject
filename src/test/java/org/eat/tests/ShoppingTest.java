@@ -2,12 +2,10 @@ package org.eat.tests;
 
 import org.eat.base.BaseTestProject;
 import org.eat.base.WebDriverFactory;
-import org.eat.utilities.ExcelUtility;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class ShoppingTest extends BaseTestProject  {
-
 
     @Test(groups = {"smoke"})
     public void addToCartFromHome()  {
@@ -15,39 +13,29 @@ public class ShoppingTest extends BaseTestProject  {
         boolean result=shop.isItemAdded();
         Assert.assertTrue(result);
 
-
     }
     @Test(groups = {"regression"})
     public void addToCartFromProductD()  {
-
         shop.addToCartFromProductDetail();
         boolean result=shop.isItemAdded();
         Assert.assertTrue(result);
 
-
-
     }
 
-
     @Test(groups = {"regression"})
-    public void returnToShoppingFromCArt() {
+    public void backToShoppingFromCArt() {
         shop.returnToShoppingFromCart();
         boolean result=shop.isUserReturnedToHomePage();
         Assert.assertTrue(result);
 
     }
-
     @Test(groups = {"smoke"})
     public void removeItemFromCartPAge()  {
-
         shop.removeItemFromCartPage();
         boolean result =shop.isItemRemovedFromCart();
         Assert.assertFalse(result);
 
-
-
     }
-
 
     @Test(groups = {"smoke"})
     public void removeItemFromHomePage()  {
@@ -56,12 +44,9 @@ public class ShoppingTest extends BaseTestProject  {
         boolean result =shop.isItemRemovedFromHomePage();
         Assert.assertTrue(result);
 
-
     }
-
     @Test(groups = {"regression"})
-    public void multipleItemToAdd()  {
-
+    public void varietyItemToAdd()  {
         shop.addingMultipleItems();
         boolean result=shop.isMultipleItemAdded();
         Assert.assertTrue(result);
