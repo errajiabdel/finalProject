@@ -17,7 +17,7 @@ public class BaseTestProject {
     public NavigationPage navP;
     public ShoppingPage shop;
 
-    @BeforeClass(groups = {"regression","smoke"})
+    @BeforeClass(alwaysRun = true)
     public void setUp () throws Exception {
         driver= WebDriverFactory.getInstance().getDriver("chrome");
         driver.get(Constants.TEST_URL);

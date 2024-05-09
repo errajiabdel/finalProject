@@ -8,7 +8,7 @@ import org.testng.annotations.*;
 
 
 public class LoginTest extends BaseTestProject {
-    @BeforeClass(groups = {"smoke","regression"})
+    @BeforeClass(alwaysRun = true)
     public void setUP(){
         if (navP.isUserLoggedIn()){
             navP.toLogout();
